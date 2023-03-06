@@ -1,0 +1,106 @@
+[
+  {
+    "_id": "6b6c4d55-6b6b-451e-8f19-35e622621b17",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:5000/register",
+    "url": "localhost:5000/booking/bill",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-12T17:51:10.916Z",
+    "modified": "2023-02-17T13:21:44.679Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"cost_of_service\":5000,\n  \"taxes\" :200,\n  \"additional_cost\":0,\n  \"total_bill\" :5200,\n  \"BookingBookingId\":1,\n  \"UserUserId\" :1\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "e0369cbd-b545-44bc-87f4-7a865f34977c",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:5000/users",
+    "url": "localhost:5000/register",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-02-12T17:51:34.179Z",
+    "modified": "2023-02-17T13:10:13.803Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"kamau@gmail.com\",\n  \"password\":1234,\n  \"address\" :\"nakuru\",\n  \"contact\":\"234523523\",\n  \"name\" :\"kamau\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "54e67fd3-5946-42fd-9712-7d469f1bbcf0",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:5000/services",
+    "url": "localhost:5000/services",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-17T13:11:16.423Z",
+    "modified": "2023-02-17T13:11:16.423Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "74f34752-fd84-4c92-b8ff-8bbbf15e85a7",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:5000/services",
+    "url": "localhost:5000/services",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-02-17T13:11:21.228Z",
+    "modified": "2023-02-17T13:12:06.775Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"service_type\":\"partial house\",\n  \"service_charge\":1000\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "eb67ec01-ae1b-4b62-a478-5666db683a9e",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:5000/book",
+    "url": "localhost:5000/book",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-17T13:12:27.673Z",
+    "modified": "2023-02-17T13:12:27.673Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "d5a0f860-bf9b-4501-838d-6d4063899976",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:5000/book",
+    "url": "localhost:5000/book",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-17T13:16:10.567Z",
+    "modified": "2023-02-19T16:44:50.072Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \n  \"bookingTime\":\"12:45\",\n  \"bookingDate\":\"02-06-2021\",\n  \"origin\":\"kabuku\",\n  \"destination\":\"ngecha\",\n  \"status\":\"picked\",\n  \"UserUserId\":1,\n  \"ServiceServiceId\":1\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
