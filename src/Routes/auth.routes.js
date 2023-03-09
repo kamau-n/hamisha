@@ -9,9 +9,13 @@ const jwt = require("jsonwebtoken")
 const verifyToken = require('../Middleware/auth.middleware');
 
 
+authRouter.get("/login", (req, res) => {
+    res.send("okay")
+})
+
 authRouter.post("/login", async(req, res) => {
     console.log("/login path has been accessed")
-    let session;
+
 
     const user = await User.findOne({
         where: {
@@ -28,19 +32,13 @@ authRouter.post("/login", async(req, res) => {
         })
     } else {
 
+        console.log(user.dataValues)
 
-        session = req.session;
-        session.user_email = req.body.login_email;
-        req.session.user = user;
-        //  {
-        //     name: user.user_name,
-        //     id: user.user_id,
-        //     role: "customer",
-        //     email: user.user_email
 
-        // }
-        console.log(req.session)
-        res.status(200).json({ login: true, msg: "login successfully", session: req.session.cookie })
+
+
+
+        res.cookie('hamisha', user).json({ login: true, msg: "login successfully", session: req.session.user })
 
     }
 

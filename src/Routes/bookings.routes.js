@@ -11,7 +11,7 @@ const Items = require('../Models/item.model')
 const bookingRoute = express.Router()
 
 // This route is for making a booking
-bookingRoute.post("/book", verifySession, async(req, res) => {
+bookingRoute.post("/book", async(req, res) => {
 
     console.log("Bookig route has been acceesed")
     console.log(req.body)
@@ -20,7 +20,7 @@ bookingRoute.post("/book", verifySession, async(req, res) => {
         Booking.create(req.body)
             .then((msg) => {
                 if (msg != null) {
-                    res.status(200).json({ msg: "booking has been made successfully", booked: true })
+                    res.status(200).json({ msg: "booking has been made successfully", booked: true, id: msg.booking_id })
                 }
             })
             .catch((err) => {
@@ -77,7 +77,14 @@ bookingRoute.post("/booking/item", async(req, res) => {
     console.log(req.body)
     try {
         Items.create(req.body)
-            .then((created) => res.send(created))
+            .then((created) => {
+                if (created != null) {
+                    res.json({ msg: "item added successfully", added: true })
+                } else {
+                    res.json({ msg: "item was not added ", added: false })
+
+                }
+            })
             .catch((err) => res.send(err))
 
     } catch (err) {

@@ -21,8 +21,10 @@ const app = express()
 
 const corsOptions = {
     origin: ["http://localhost:3000"],
-    methods: ["GET", "POST", "DELETE"],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true
+
 }
 
 app.use(express.json())
@@ -33,7 +35,7 @@ app.use(session({
     key: "hamisha",
     secret: "this is my secret",
     saveUninitialized: true,
-    resave: true,
+    resave: false,
     cookie: {
         secure: true,
         maxAge: 1000 * 60 * 500,
