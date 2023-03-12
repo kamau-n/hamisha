@@ -4,7 +4,7 @@ const Booking = require("./bookings.model");
 
 
 const Items = sequelizeConnection.define("Items", {
-    item_quality: {
+    item_quantity: {
         type: DataTypes.TEXT,
         allowNull: false,
     },
@@ -14,10 +14,11 @@ const Items = sequelizeConnection.define("Items", {
 
     },
     item_weight: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.TEXT,
         allowNull: false
 
     },
+
     item_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

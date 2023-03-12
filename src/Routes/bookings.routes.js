@@ -85,7 +85,10 @@ bookingRoute.post("/booking/item", async(req, res) => {
 
                 }
             })
-            .catch((err) => res.send(err))
+            .catch((err) => {
+                res.send(err)
+                console.log(err)
+            })
 
     } catch (err) {
         res.send(err)
@@ -109,13 +112,15 @@ bookingRoute.get("/booking/bill", async(req, res) => {
 bookingRoute.get("/booking/user/:id", async(req, res) => {
 
     try {
-        const bookings = Booking.findAll({
+        const bookings = await Booking.findAll({
             where: {
                 booking_user_user_id: req.params.id
             }
         })
 
+
         res.send(bookings)
+        console.log(bookings)
     } catch (e) {
         res.send("unable to get any bookings")
     }

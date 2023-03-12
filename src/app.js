@@ -63,7 +63,7 @@ app.use(session({
 sequelizeConnection.authenticate()
     .then(() => {
         console.log("connected successfully")
-        sequelizeConnection.sync({}).then((res) => console.log("everything looks good" + res._model))
+        sequelizeConnection.sync({ force: false }).then((res) => console.log("everything looks good" + res._model))
             .catch((err) => console.log("there is an error" + err))
 
 

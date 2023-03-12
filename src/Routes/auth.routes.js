@@ -33,12 +33,14 @@ authRouter.post("/login", async(req, res) => {
     } else {
 
         console.log(user.dataValues)
+        req.session.user = user.dataValues;
 
 
 
 
 
-        res.cookie('hamisha', user).json({ login: true, msg: "login successfully", session: req.session.user })
+
+        res.status(200).json({ login: true, msg: "login successfully", session: req.session.user })
 
     }
 
