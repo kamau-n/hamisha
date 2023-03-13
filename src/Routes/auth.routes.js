@@ -40,7 +40,7 @@ authRouter.post("/login", async(req, res) => {
 
 
 
-        res.status(200).json({ login: true, msg: "login successfully", session: req.session.user })
+        res.status(200).json({ login: true, msg: "login successfully", user: user.dataValues })
 
     }
 
@@ -49,6 +49,11 @@ authRouter.post("/login", async(req, res) => {
 
 
 
+
+})
+
+authRouter.get("/logout", (req, res) => {
+    req.session.destroy()
 })
 
 module.exports = authRouter;

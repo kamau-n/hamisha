@@ -61,6 +61,31 @@ userRouter.post("/register", async(req, res) => {
 
 })
 
+//getting a user details by email 
+
+userRouter.get("/user", async(req, res) => {
+
+    if (req.session.user) {
+        console.log(req.session.user)
+        const email = req.session.user.user_email;
+        const user = await User.findAll({
+            where: {
+                user_email: email
+            }
+        })
+        if (user != null) {
+            res.status(200).json({ user, logged: true })
+            console.log(user)
+        } else {
+            console.log("no session available");
+            res.status(200).json({ user, logged: false })
+        }
+
+    } else {
+        res.json({ logged: false })
+    }
+})
+
 
 
 module.exports = userRouter;

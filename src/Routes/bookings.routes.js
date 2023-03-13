@@ -14,7 +14,7 @@ const bookingRoute = express.Router()
 bookingRoute.post("/book", async(req, res) => {
 
     console.log("Bookig route has been acceesed")
-    console.log(req.body)
+        // console.log(req.body)
     try {
 
         Booking.create(req.body)
@@ -120,7 +120,7 @@ bookingRoute.get("/booking/user/:id", async(req, res) => {
 
 
         res.send(bookings)
-        console.log(bookings)
+            //console.log(bookings)
     } catch (e) {
         res.send("unable to get any bookings")
     }
